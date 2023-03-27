@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import { CabinasService } from '../servicios/cabinas.service';
 @Component({
   selector: 'app-cabina1',
   templateUrl: './cabina1.page.html',
@@ -9,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
 export class Cabina1Page implements OnInit {
   private tiempoInicial: number;
   public precio : number = 0;
+  public numLlamada : number = 0;
 
   constructor() { this.tiempoInicial = 0}
 
@@ -28,8 +29,18 @@ export class Cabina1Page implements OnInit {
       this.precio = 200;
       this.tiempoInicial = 0;
     }
+    this.numLlamada++;
+    this.agregarLlamada(tiempoTranscurrido, this.precio , this.numLlamada)
+    console.log(CabinasService.llamada);
+  }
 
-    console.log(tiempoTranscurrido);
+  agregarLlamada( duracion:number, precio:number , numllamadas:number) {
+    const llamada = {
+      numllamadas,
+      duracion,
+      precio
+    };
+    CabinasService.llamada.push(llamada);
   }
 
 }

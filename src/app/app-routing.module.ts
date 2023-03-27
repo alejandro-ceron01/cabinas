@@ -18,8 +18,8 @@ const routes: Routes = [
     loadChildren: () => import('./cabina1/cabina1.module').then( m => m.Cabina1PageModule)
   },
   {
-    path: 'cabina2',
-    loadChildren: () => import('./cabina2/cabina2.module').then( m => m.Cabina2PageModule)
+    path: 'historial',
+    loadChildren: () => import('./historial/historial.module').then( m => m.HistorialPageModule)
   }
 ];
 

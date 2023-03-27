@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>historial</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ul *ngFor="let llamada of mostrar()">
+    <li >
+      <span>Llamada numero {{ llamada.numllamadas}}</span>
+    </li>
+    <li >
+      <span>{{ llamada.duracion }}</span>
+    </li>
+    <li >
+      <span>{{ llamada.precio }}</span>
+    </li>
+  </ul>
+
+</ion-content>
